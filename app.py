@@ -39,10 +39,64 @@ def upload_file():
             return redirect(url_for('download_file', filename='output_with_match_scores.xlsx'))
 
     return '''
-    <form method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
-    </form>
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fuzzy Match Application</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 50%;
+                margin: 100px auto;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                text-align: center;
+            }
+            h1 {
+                color: #333;
+            }
+            form {
+                margin-top: 20px;
+            }
+            input[type="file"] {
+                padding: 10px;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+            input[type="submit"] {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #218838;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Upload Excel File for Fuzzy Matching</h1>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <br>
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+    </body>
+    </html>
     '''
 
 # Route to download the processed file
@@ -57,4 +111,3 @@ if not os.path.exists('uploads'):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
