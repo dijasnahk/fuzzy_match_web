@@ -88,12 +88,22 @@ def upload_file():
                 max-width: 150px;  /* Adjust size of the logo */
                 margin-bottom: 20px;
             }
+            p.instructions {
+                font-size: 16px;
+                color: #555;
+            }
+            a {
+                text-decoration: none;
+                color: #007bff;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <img src="/static/logo.png" alt="Logo">
             <h1>Upload Excel File for Fuzzy Matching</h1>
+            <p class="instructions">Please upload an Excel file with two columns: <strong>'Company A'</strong> and <strong>'Company B'</strong>.</p>
+            <p class="instructions">Download a <a href="/static/sample_file.xlsx" target="_blank">sample file</a> for reference.</p>
             <form method="post" enctype="multipart/form-data">
                 <input type="file" name="file">
                 <br>
