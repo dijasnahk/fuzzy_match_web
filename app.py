@@ -84,10 +84,15 @@ def upload_file():
             input[type="submit"]:hover {
                 background-color: #218838;
             }
+            img {
+                max-width: 150px;  /* Adjust size of the logo */
+                margin-bottom: 20px;
+            }
         </style>
     </head>
     <body>
         <div class="container">
+            <img src="/static/logo.png" alt="Logo">
             <h1>Upload Excel File for Fuzzy Matching</h1>
             <form method="post" enctype="multipart/form-data">
                 <input type="file" name="file">
